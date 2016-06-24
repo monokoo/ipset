@@ -2,8 +2,7 @@
 # the system initfinished. By default this file does nothing.
 
 ipet_chinaip_exist='ipset list -n|grep chinaip'
-
-if [ ! -z "ipet_chinaip_exist" ];then
+if [ -z "ipet_chinaip_exist" ];then
    ipset destroy chinaip
 fi
 ipset create chinaip hash:net hashsize 91260
