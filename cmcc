@@ -2,7 +2,7 @@
 # the system initfinished. By default this file does nothing.
 
 ipet_cmcc_exist='ipset list -n|grep cmcc'
-if [ ! -z "ipet_cmcc_exist" ];then
+if [ -z "ipet_cmcc_exist" ];then
    ipset destroy cmcc
 fi
 ipset create cmcc hash:net hashsize 8192
